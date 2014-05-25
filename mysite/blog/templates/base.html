@@ -1,0 +1,43 @@
+{% load archivelist %}
+{% load taglist %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{mysite.models.Post.taglist}}</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/blog.css">
+	<link href="/static/js/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />  
+	<script type="text/javascript" src="/static/js/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>  
+	<script type="text/javascript">      
+		SyntaxHighlighter.all();       
+	</script>
+</head>
+<body>
+	<div id="main">
+	{% block post_list %}
+
+	{% endblock %}
+	</div>
+	<div id="right_bar">
+		<div class="widget-wrap">
+			<h3>Tags</h3>
+			<div class="widget">
+				<ul id="tags_list">
+				{% taglist %}
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="widget-wrap">
+			<h3>Archives</h3>
+			<div class="widget">
+				<ul id="tags_list">
+				{% archivelist %}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

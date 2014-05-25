@@ -1,0 +1,3 @@
+{% for tag in tags %}
+	<li><a href="/blog/tag/{{tag}}">{{tag}}</a><label>({{tag.taggit_taggeditem_items.count}})</label></li>
+{% endfor %}
